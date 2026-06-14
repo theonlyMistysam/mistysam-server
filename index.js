@@ -10,7 +10,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(
+  cors({
+    origin: ["https://mistysam-client.vercel.app", "http://localhost:5173"],
+  }),
+);
 app.use(express.json());
 
 // Connect to MongoDB
@@ -71,7 +75,7 @@ app.post("/api/contact", async (req, res) => {
 // Get all projects
 app.get("/api/projects", async (req, res) => {
   try {
-    const projects = await Project.find().sort({ year: -1 });
+    const projects = await Project.find().sort({ _id: 1 });
     res.json(projects);
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch projects." });

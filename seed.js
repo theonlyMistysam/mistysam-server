@@ -4,14 +4,6 @@ require("dotenv").config();
 
 const projects = [
   {
-    title: "My Portfolio",
-    tag: "Frontend",
-    year: "2025",
-    desc: "My first website with dynamic content and fast delivery.",
-    link: "#",
-    featured: true,
-  },
-  {
     title: "KDU Blog",
     tag: "Full-Stack",
     year: "2026",
@@ -32,6 +24,14 @@ const projects = [
     tag: "Design",
     year: "2025",
     desc: "Reusable React component library with themeable design tokens and Storybook docs.",
+    link: "#",
+    featured: false,
+  },
+  {
+    title: "My Portfolio",
+    tag: "Frontend",
+    year: "2025",
+    desc: "My first website with dynamic content and fast delivery.",
     link: "#",
     featured: false,
   },
